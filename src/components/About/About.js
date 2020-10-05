@@ -51,17 +51,25 @@ function About(props){
               </div>
               <Hidden mdUp>
                 <div className={classes.socmed}>
-                  <IconButton aria-label="Delete" className={classes.margin} size="small">
+                  <IconButton aria-label="FaceBook" className={classes.margin} size="small">
+                  <a rel="noopener noreferrer" href="https://www.facebook.com/majid.vezvaee" target="_blank">
                     <i className="ion-social-facebook" />
+                    </a>
                   </IconButton>
-                  <IconButton aria-label="Delete" className={classes.margin} size="small">
+                  <IconButton aria-label="Twitter" className={classes.margin} size="small">
+                <a rel="noopener noreferrer" href="https://twitter.com/MVezvaee" target="_blank">
                     <i className="ion-social-twitter" />
+                  </a>
                   </IconButton>
                   <IconButton aria-label="Delete" className={classes.margin} size="small">
-                    <i className="ion-social-google" />
+                <a rel="noopener noreferrer" href="https://www.instagram.com/vezvaee/" target="_blank">
+                    <i className="ion-social-instagram" />
+                    </a>
                   </IconButton>
                   <IconButton aria-label="Delete" className={classes.margin} size="small">
+                <a rel="noopener noreferrer" href="https://www.linkedin.com/in/majid-vezvaee-3a764371/" target="_blank">
                     <i className="ion-social-linkedin" />
+                    </a>
                   </IconButton>
                 </div>
                 <Typography variant="h5">

@@ -40,12 +40,12 @@ function Footer(props) {
                 </a>
               </IconButton>
               <IconButton aria-label="Delete" className={classes.margin} size="small">
-                <a rel="noopener noreferrer" href="https://twitter.com/MVezvaee" target="_blank">
+                <a rel="noopener noreferrer" href="https://www.instagram.com/vezvaee/" target="_blank">
                 <i className="ion-social-instagram" />
                 </a>
               </IconButton>
               <IconButton aria-label="Delete" className={classes.margin} size="small">
-                <a rel="noopener noreferrer" href="https://www.instagram.com/vezvaee/" target="_blank">
+                <a rel="noopener noreferrer" href="https://twitter.com/MVezvaee" target="_blank">
                 <i className="ion-social-twitter" />
                 </a>
               </IconButton>

@@ -14,6 +14,8 @@ import Decoration from './components/Parallax/Decoration';
 import Testimonials from './components/Testimonials/Testimonials';
 // import Blog from './components/Blog/Blog';
 import Footer from './components/Footer/Footer';
+import PageNav from './components/PageNav/PageNav';
+import Hidden from '@material-ui/core/Hidden';
 
 
 const sectionMargin = margin => (margin * 20);
@@ -104,6 +106,9 @@ function Entrance(props) {
             </section>
           </div>
             </div>
+        <Hidden smDown>
+          <PageNav />
+        </Hidden>
             </div>
       </React.Fragment>
   );

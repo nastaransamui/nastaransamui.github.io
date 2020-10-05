@@ -40,7 +40,7 @@ function BannerNav(props){
                   <div className={classes.overlay} />
                 </div>
               </div>
-              <Hidden mdDown>
+              <Hidden >
                 <div className={classes.settingIcon}>
                   <Settings toggleDark={onToggleDark}  />
                 </div>
