@@ -9,36 +9,41 @@ import { useText } from '../theme/common';
 import Title from '../Title/Title';
 import IconTextCard from '../Cards/IconText';
 import useStyle from './services-style';
-import '../../public/slick/slick.css'
-import '../../public/slick/slick-theme.css'
-import IosArrowBack from "react-ionicons/lib/IosArrowBack";
-import IosArrowForward from "react-ionicons/lib/IosArrowForward";
+import '../../public/slick/slick.css';
+import '../../public/slick/slick-theme.css';
+import IosArrowBack from 'react-ionicons/lib/IosArrowBack';
+import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
 const services = [
   {
-    name: 'Material UI developer',
-    desc: 'Front End UI desing.',
-    Icon: 'SiMaterialUi'
+    name: 'React',
+    desc: 'Mobile developement with React Native .',
+    Icon: 'SiReact',
   },
   {
     name: 'Node JS Backend',
-    desc: 'Back end pure Node JS developement.',
-    Icon: 'SiNodeDotJs'
-  },
-  {
-    name: 'HTML Prototyping',
-    desc: 'HTML and CSS desing.',
-    Icon: 'SiHtml5'
+    desc: 'Back end pure Node JS and Next.js frame work.',
+    Icon: 'SiNodeDotJs',
   },
   {
     name: 'Mongo DB',
     desc: 'Mongo DB desing and query writing.',
-    Icon: 'SiMongodb'
+    Icon: 'SiMongodb',
   },
   {
-    name: 'React Native',
-    desc: 'Mobile developement with React Native .',
-    Icon: 'SiReact'
-  }
+    name: 'Material UI ',
+    desc: 'Front End UI desing with Frameworks.',
+    Icon: 'SiMaterialUi',
+  },
+  {
+    name: 'Javascript Prototyping',
+    desc: 'Javascript and CSS for front End.',
+    Icon: 'SiJavascript',
+  },
+  {
+    name: 'Github ',
+    desc: 'Github Version control.',
+    Icon: 'SiGithub',
+  },
 ];
 
 function Services(props) {
@@ -46,7 +51,6 @@ function Services(props) {
   const text = useText();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
-
 
   const slider = useRef(null);
   const settings = {
@@ -58,47 +62,46 @@ function Services(props) {
     arrows: false,
     variableWidth: true,
     pauseOnHover: true,
-    responsive: [{
-      breakpoint: 960,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    }, {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    }, {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }]
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
-
-
 
   return (
     <div className={classes.root}>
       <div className={classes.floatingTitle}>
         <Title>
-          <strong>
-          Services
-          </strong>
+          <strong>Services</strong>
         </Title>
         <Typography className={text.paragraph}>
-        Working with mutual respect and trust
+          Working with mutual respect and trust
         </Typography>
       </div>
       <div className={classes.sliderWrap}>
         <div className={classes.carousel}>
           <IconButton
             className={clsx(classes.nav, classes.prev)}
-            onClick={() => slider.current.slickPrev()}
-          >
+            onClick={() => slider.current.slickPrev()}>
             <IosArrowBack />
           </IconButton>
           <Carousel ref={slider} {...settings}>
@@ -124,8 +127,7 @@ function Services(props) {
           </Carousel>
           <IconButton
             className={clsx(classes.nav, classes.next)}
-            onClick={() => slider.current.slickNext()}
-          >
+            onClick={() => slider.current.slickNext()}>
             <IosArrowForward />
           </IconButton>
         </div>

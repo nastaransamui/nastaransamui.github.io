@@ -10,16 +10,16 @@ import Typography from '@material-ui/core/Typography';
 import brand from '../../public/text/brand';
 import { useText } from '../theme/common';
 import useStyles from './about-style';
-import reward1 from '../../public/images/profile/MaterialUi.svg';
-import reward2 from '../../public/images/profile/React.svg';
-import reward3 from '../../public/images/profile/MeteorIcon.svg';
+import reward2 from '../../public/images/profile/reward2.png';
+import reward3 from '../../public/images/profile/node.png';
+import reward4 from '../../public/images/profile/nextjs.png';
 
-function About(props){
+function About(props) {
   const theme = useTheme();
   const classes = useStyles();
   const text = useText();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  return(
+  return (
     <div className={classes.root}>
       <Container maxWidth={isMobile ? 'sm' : 'lg'}>
         <Grid container spacing={0}>
@@ -29,56 +29,89 @@ function About(props){
               <div className={classes.reward}>
                 <div className={classes.item}>
                   <figure>
-                    <img src={reward1} alt="badge" />
+                    <img src={reward3} alt='badge' />
                   </figure>
-                  <Typography component="p" className={text.paragraph}>Frame Work</Typography>
-                  <Typography variant="h6" >Material Ui</Typography>
+                  <Typography component='p' className={text.paragraph}>
+                    Back End
+                  </Typography>
+                  <Typography variant='h6'>Node Js</Typography>
                 </div>
                 <div className={classes.item}>
                   <figure>
-                    <img src={reward2} alt="badge" />
+                    <img src={reward2} alt='badge' />
                   </figure>
-                  <Typography component="p" className={text.paragraph}>Frame Work</Typography>
-                  <Typography variant="h5" >React</Typography>
+                  <Typography component='p' className={text.paragraph}>
+                    Frame Work
+                  </Typography>
+                  <Typography variant='h5'>React</Typography>
                 </div>
                 <div className={classes.item}>
                   <figure>
-                    <img src={reward3} alt="badge" />
+                    <img src={reward4} alt='badge' />
                   </figure>
-                  <Typography component="p" className={text.paragraph}>Frame Work</Typography>
-                  <Typography variant="h5" >Meteor JS</Typography>
+                  <Typography component='p' className={text.paragraph}>
+                    Frame Work
+                  </Typography>
+                  <Typography variant='h5'>Next JS</Typography>
                 </div>
               </div>
+
               <Hidden mdUp>
                 <div className={classes.socmed}>
-                  <IconButton aria-label="FaceBook" className={classes.margin} size="small">
-                  <a rel="noopener noreferrer" href="https://www.facebook.com/majid.vezvaee" target="_blank">
-                    <i className="ion-social-facebook" />
+                  <IconButton
+                    aria-label='FaceBook'
+                    className={classes.margin}
+                    size='small'>
+                    <a
+                      rel='noopener noreferrer'
+                      href='https://www.facebook.com/majid.vezvaee'
+                      target='_blank'>
+                      <i className='ion-social-facebook' />
                     </a>
                   </IconButton>
-                  <IconButton aria-label="Twitter" className={classes.margin} size="small">
-                <a rel="noopener noreferrer" href="https://twitter.com/MVezvaee" target="_blank">
-                    <i className="ion-social-twitter" />
-                  </a>
-                  </IconButton>
-                  <IconButton aria-label="Delete" className={classes.margin} size="small">
-                <a rel="noopener noreferrer" href="https://www.instagram.com/vezvaee/" target="_blank">
-                    <i className="ion-social-instagram" />
+                  <IconButton
+                    aria-label='Twitter'
+                    className={classes.margin}
+                    size='small'>
+                    <a
+                      rel='noopener noreferrer'
+                      href='https://twitter.com/MVezvaee'
+                      target='_blank'>
+                      <i className='ion-social-twitter' />
                     </a>
                   </IconButton>
-                  <IconButton aria-label="Delete" className={classes.margin} size="small">
-                <a rel="noopener noreferrer" href="https://www.linkedin.com/in/majid-vezvaee-3a764371/" target="_blank">
-                    <i className="ion-social-linkedin" />
+                  <IconButton
+                    aria-label='Delete'
+                    className={classes.margin}
+                    size='small'>
+                    <a
+                      rel='noopener noreferrer'
+                      href='https://www.instagram.com/vezvaee/'
+                      target='_blank'>
+                      <i className='ion-social-instagram' />
+                    </a>
+                  </IconButton>
+                  <IconButton
+                    aria-label='Delete'
+                    className={classes.margin}
+                    size='small'>
+                    <a
+                      rel='noopener noreferrer'
+                      href='https://www.linkedin.com/in/majid-vezvaee-3a764371/'
+                      target='_blank'>
+                      <i className='ion-social-linkedin' />
                     </a>
                   </IconButton>
                 </div>
-                <Typography variant="h5">
-                I create an efficient UI mobile or web design also UX research to make sure that I get what people needs and strategy for interaction design.
+                <Typography variant='h5'>
+                  I create an efficient UI mobile or web design also UX research
+                  to make sure that I get what people needs and strategy for
+                  interaction design.
                 </Typography>
               </Hidden>
               <Paper className={classes.photo}>
                 <figure>
-                  <img src={brand.profile.avatar} alt="avatar" />
+                  <img src={brand.profile.avatar} alt='avatar' />
                 </figure>
                 <span className={classes.frame} />
               </Paper>
@@ -88,7 +121,7 @@ function About(props){
         </Grid>
       </Container>
     </div>
-  )
+  );
 }
 
 export default withTheme(About);

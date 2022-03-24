@@ -1,14 +1,14 @@
 import { makeStyles } from '@material-ui/core/styles';
 const gold = '#D6BD96';
 
-const aboutStyles = makeStyles(theme => ({
+const aboutStyles = makeStyles((theme) => ({
   root: {
     position: 'relative',
     '& > div': {
       [theme.breakpoints.down('xs')]: {
-        padding: 0
-      }
-    }
+        padding: 0,
+      },
+    },
   },
   about: {
     display: 'flex',
@@ -22,9 +22,9 @@ const aboutStyles = makeStyles(theme => ({
       '& > h5': {
         fontSize: 18,
         lineHeight: '28px',
-        marginTop: theme.spacing(7)
-      }
-    }
+        marginTop: theme.spacing(7),
+      },
+    },
   },
   line: {
     borderTop: 0,
@@ -37,8 +37,8 @@ const aboutStyles = makeStyles(theme => ({
     position: 'relative',
     marginTop: theme.spacing(2),
     [theme.breakpoints.down('md')]: {
-      display: 'none'
-    }
+      display: 'none',
+    },
   },
   reward: {
     flex: 1,
@@ -48,8 +48,8 @@ const aboutStyles = makeStyles(theme => ({
       padding: theme.spacing(0.5, 7, 0, 0),
     },
     [theme.breakpoints.down('xs')]: {
-      overflow: 'auto'
-    }
+      overflow: 'auto',
+    },
   },
   item: {
     textAlign: 'center',
@@ -60,13 +60,13 @@ const aboutStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('xs')]: {
       paddingLeft: theme.spacing(3),
-      paddingRight: theme.spacing(3)
+      paddingRight: theme.spacing(3),
     },
     '& figure': {
       height: 70,
       margin: theme.spacing(0, 0, 2),
       [theme.breakpoints.down('sm')]: {
-        height: 50
+        height: 50,
       },
       '& img': {
         height: '100%',
@@ -75,20 +75,20 @@ const aboutStyles = makeStyles(theme => ({
     '& p': {
       fontFamily: 'Times New Roman',
       [theme.breakpoints.down('sm')]: {
-        fontSize: 16
-      }
+        fontSize: 16,
+      },
     },
     '& h5': {
       fontWeight: theme.typography.fontWeightMedium,
       textTransform: 'uppercase',
       [theme.breakpoints.down('sm')]: {
-        fontSize: 16
-      }
+        fontSize: 16,
+      },
     },
   },
   photo: {
     position: 'relative',
-    marginTop: -140,
+    marginTop: -100,
     background: theme.palette.common.white,
     width: 270,
     height: 345,
@@ -97,15 +97,15 @@ const aboutStyles = makeStyles(theme => ({
       minHeight: 200,
       height: 'auto',
       marginLeft: 'auto',
-      marginRight: 'auto'
+      marginRight: 'auto',
     },
     '& figure': {
       margin: 0,
       '& img': {
         width: '100%',
         minHeight: '100%',
-      }
-    }
+      },
+    },
   },
   frame: {
     position: 'absolute',
@@ -128,12 +128,15 @@ const aboutStyles = makeStyles(theme => ({
       width: 36,
       height: 36,
       '& i': {
-        color: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.primary.dark,
-      }
+        color:
+          theme.palette.type === 'dark'
+            ? theme.palette.primary.light
+            : theme.palette.primary.dark,
+      },
     },
     '& i': {
-      fontSize: 22
-    }
+      fontSize: 22,
+    },
   },
 }));
 

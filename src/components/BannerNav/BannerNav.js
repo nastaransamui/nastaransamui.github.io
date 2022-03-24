@@ -17,13 +17,13 @@ import TwitterIcon from 'react-ionicons/lib/LogoTwitter';
 import InstagramIcon from 'react-ionicons/lib/LogoInstagram';
 import LinkedinIcon from 'react-ionicons/lib/LogoLinkedin';
 
-function BannerNav(props){
+function BannerNav(props) {
   const theme = useTheme();
   const text = useText();
   const classes = useStyles();
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
-  const {onToggleDark} = props;
-  return(
+  const { onToggleDark } = props;
+  return (
     <div className={classes.root}>
       <Container fixed={isDesktop}>
         <Grid container spacing={0}>
@@ -36,48 +36,72 @@ function BannerNav(props){
             <div className={classes.banner}>
               <div className={classes.cover}>
                 <div className={classes.figure}>
-                  <img src={brand.profile.cover} alt="cover" />
+                  <img src={brand.profile.cover} alt='cover' />
                   <div className={classes.overlay} />
                 </div>
               </div>
-              <Hidden >
+              <Hidden>
                 <div className={classes.settingIcon}>
-                  <Settings toggleDark={onToggleDark}  />
+                  <Settings toggleDark={onToggleDark} />
                 </div>
               </Hidden>
               <div className={classes.text}>
-                <Typography variant="h4" className={text.title2}>
+                <Typography variant='h4' className={text.title2}>
                   Hi,
                 </Typography>
-                <Typography variant="h2" className={text.title}>
-                I am &nbsp;MJ, and I do Javascript developement
+                <Typography variant='h2' className={text.title}>
+                  I am &nbsp;MJ, and I do Javascript developement
                 </Typography>
                 <Hidden smDown>
-                  <Typography variant="h5" className={text.subtitle2}>
-                    I'm full stack developer in Javascript I create web application
-                    base on Meteor js and React.
-                    I do mobile application with React-Native.
+                  <Typography variant='h5' className={text.subtitle2}>
+                    I'm full stack developer in Javascript I can create,deploy
+                    and fix applications base on Node js, Mongodb and React. I
+                    have some experince about Phyton and Flutter.
                   </Typography>
                   <div className={classes.socmed}>
-                  <IconButton aria-label="Delete" className={classes.margin} size="small">
-                    <a rel="noopener noreferrer" href="https://www.facebook.com/majid.vezvaee" target="_blank">
-                      <FacebookIcon fontSize="34" />
-                    </a>
+                    <IconButton
+                      aria-label='Delete'
+                      className={classes.margin}
+                      size='small'>
+                      <a
+                        rel='noopener noreferrer'
+                        href='https://www.facebook.com/majid.vezvaee'
+                        target='_blank'>
+                        <FacebookIcon fontSize='34' />
+                      </a>
                     </IconButton>
-                    <IconButton aria-label="Delete" className={classes.margin} size="small">
-                    <a rel="noopener noreferrer" href="https://twitter.com/MVezvaee" target="_blank">
-                      <TwitterIcon fontSize="34" />
-                    </a>
+                    <IconButton
+                      aria-label='Delete'
+                      className={classes.margin}
+                      size='small'>
+                      <a
+                        rel='noopener noreferrer'
+                        href='https://twitter.com/MVezvaee'
+                        target='_blank'>
+                        <TwitterIcon fontSize='34' />
+                      </a>
                     </IconButton>
-                    <IconButton aria-label="Delete" className={classes.margin} size="small">
-                    <a rel="noopener noreferrer" href="https://www.instagram.com/vezvaee/" target="_blank">
-                      <InstagramIcon fontSize="34" />
-                    </a>
+                    <IconButton
+                      aria-label='Delete'
+                      className={classes.margin}
+                      size='small'>
+                      <a
+                        rel='noopener noreferrer'
+                        href='https://www.instagram.com/vezvaee/'
+                        target='_blank'>
+                        <InstagramIcon fontSize='34' />
+                      </a>
                     </IconButton>
-                    <IconButton aria-label="Delete" className={classes.margin} size="small">
-                    <a rel="noopener noreferrer" href="https://www.linkedin.com/in/majid-vezvaee-3a764371/" target="_blank">
-                      <LinkedinIcon fontSize="34" />
-                    </a>
+                    <IconButton
+                      aria-label='Delete'
+                      className={classes.margin}
+                      size='small'>
+                      <a
+                        rel='noopener noreferrer'
+                        href='https://www.linkedin.com/in/majid-vezvaee-3a764371/'
+                        target='_blank'>
+                        <LinkedinIcon fontSize='34' />
+                      </a>
                     </IconButton>
                   </div>
                 </Hidden>
@@ -87,11 +111,11 @@ function BannerNav(props){
         </Grid>
       </Container>
     </div>
-  )
+  );
 }
 
-BannerNav.propTypes ={
+BannerNav.propTypes = {
   onToggleDark: PropTypes.func.isRequired,
-}
+};
 
-export default withTheme(BannerNav)
+export default withTheme(BannerNav);

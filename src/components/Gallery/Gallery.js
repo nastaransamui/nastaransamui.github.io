@@ -22,65 +22,65 @@ const portfolio = [
   {
     img: Gallery1,
     title: 'Main Page desing',
-    link: 'https://recminvestment.meteorapp.com/',
+    link: 'https://home-app-ten.vercel.app/',
     size: 'short',
-    category: 'cat1'
+    category: 'cat1',
   },
   {
     img: Gallery2,
-    title: 'Travel Search Page',
-    link: 'https://recminvestment.meteorapp.com/',
+    title: 'LayOut design',
+    link: 'https://seoproject.vercel.app/',
     size: 'long',
-    category: 'cat2'
+    category: 'cat2',
   },
   {
     img: Gallery3,
     title: 'Login Validation ',
-    link: 'https://recminvestment.meteorapp.com/',
+    link: 'https://admin-home-next.vercel.app/admin',
     size: 'short',
-    category: 'cat3'
+    category: 'cat3',
   },
   {
     img: Gallery4,
     title: 'Dashboard desing',
-    link: 'https://recminvestment.meteorapp.com/',
+    link: 'https://admin-home-next.vercel.app/admin',
     size: 'long',
-    category: 'cat1'
+    category: 'cat1',
   },
   {
     img: Gallery5,
     title: 'Youtube Banner',
-    link: 'https://recminvestment.meteorapp.com/',
+    link: 'https://home-app-ten.vercel.app/',
     size: 'short',
-    category: 'cat2'
+    category: 'cat2',
   },
   {
     img: Gallery6,
-    title: 'Page Gallery',
-    link: 'https://recminvestment.meteorapp.com/',
+    title: 'Crypto design',
+    link: 'https://charts-two.vercel.app/',
     size: 'short',
-    category: 'cat3'
+    category: 'cat3',
   },
   {
     img: Gallery7,
-    title: 'Contact Us and Google Map',
-    link: 'https://recminvestment.meteorapp.com/',
+    title: 'Candle Charts',
+    link: 'https://charts-two.vercel.app/dashboard',
     size: 'short',
-    category: 'cat1'
+    category: 'cat1',
   },
   {
     img: Gallery8,
     title: 'Handle galleries with images and product page',
-    link: 'https://recminvestment.meteorapp.com/',
+    link: 'https://home-app-ten.vercel.app/',
     size: 'short',
-    category: 'cat2'
+    category: 'cat2',
   },
   {
     img: Gallery9,
-    title: 'Mobile Desing with Native',
-    link: 'https://recminvestment.meteorapp.com/',
+    title: 'Developement',
+    link: 'https://home-app-ten.vercel.app/',
     size: 'long',
-    category: 'cat2'
+    category: 'cat2',
   },
 ];
 
@@ -99,12 +99,12 @@ function Gallery(props) {
     speed: 500,
     autoplay: true,
     slidesToShow: 1,
-    arrows: true
+    arrows: true,
   };
 
-  const filterChildren = name => {
+  const filterChildren = (name) => {
     if (name !== 'all') {
-      const filteredData = portfolio.filter(item => item.category === name);
+      const filteredData = portfolio.filter((item) => item.category === name);
       setData(filteredData);
       setFilter(name);
     } else {
@@ -123,33 +123,27 @@ function Gallery(props) {
       <Container>
         <Title>
           My
-          <strong>
-            Work
-          </strong>
+          <strong>Work</strong>
         </Title>
         <div className={classes.filter}>
           <Button
             onClick={() => filterChildren('all')}
-            className={filter === 'all' ? classes.selected : ''}
-          >
+            className={filter === 'all' ? classes.selected : ''}>
             All
           </Button>
           <Button
             onClick={() => filterChildren('cat1')}
-            className={filter === 'cat1' ? classes.selected : ''}
-          >
+            className={filter === 'cat1' ? classes.selected : ''}>
             Category 1
           </Button>
           <Button
             onClick={() => filterChildren('cat2')}
-            className={filter === 'cat2' ? classes.selected : ''}
-          >
+            className={filter === 'cat2' ? classes.selected : ''}>
             Category 2
           </Button>
           <Button
             onClick={() => filterChildren('cat3')}
-            className={filter === 'cat3' ? classes.selected : ''}
-          >
+            className={filter === 'cat3' ? classes.selected : ''}>
             Category 3
           </Button>
         </div>
@@ -159,8 +153,7 @@ function Gallery(props) {
               <div
                 className={clsx(classes.item, isLoaded && classes.loaded)}
                 key={index.toString()}
-                style={{ transitionDuration: index / 4 + 's' }}
-              >
+                style={{ transitionDuration: index / 4 + 's' }}>
                 <ImageThumbCard
                   img={item.img}
                   title={item.title}
@@ -170,15 +163,16 @@ function Gallery(props) {
               </div>
             ))}
           </div>
-          {data.length < 1 && <Typography variant="button" component="p" align="center">No data to display yet</Typography>}
+          {data.length < 1 && (
+            <Typography variant='button' component='p' align='center'>
+              No data to display yet
+            </Typography>
+          )}
         </Hidden>
         <Hidden smUp>
           <Carousel {...settings}>
             {data.map((item, index) => (
-              <div
-                className={classes.itemCarousel}
-                key={index.toString()}
-              >
+              <div className={classes.itemCarousel} key={index.toString()}>
                 <ImageThumbCard
                   img={item.img}
                   title={item.title}
@@ -193,6 +187,5 @@ function Gallery(props) {
     </div>
   );
 }
-
 
 export default withTheme(Gallery);
