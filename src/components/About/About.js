@@ -7,7 +7,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import brand from '../../public/text/brand';
 import { useText } from '../theme/common';
 import useStyles from './about-style';
 import reward2 from '../../public/images/profile/reward2.png';
