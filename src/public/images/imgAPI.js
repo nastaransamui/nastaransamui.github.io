@@ -10,7 +10,7 @@ const imgAPI = {
     '/images/avatars/pp_boy2.svg',
     '/images/avatars/pp_boy3.svg',
     '/images/avatars/pp_boy4.svg',
-    '/images/avatars/pp_boy5.svg'
+    '/images/avatars/pp_boy5.svg',
   ],
   photo: [
     'https://via.placeholder.com/675x900/e1ad92/fff',
@@ -29,7 +29,7 @@ const imgAPI = {
     'https://via.placeholder.com/640x425/c4cdff/757575',
   ],
   profile: [
-    'https://cdn.hipwallpaper.com/i/81/95/yzs0jT.jpg',
+    '/images/bg.png',
     'https://tonycarreon.com/blog/wp-content/uploads/2014/01/avatar-image.png',
     '/images/profile/pc.jpg',
     'https://via.placeholder.com/400x400/4e5467/FFFFFF',
@@ -39,7 +39,7 @@ const imgAPI = {
     'https://via.placeholder.com/400x400/b79136/FFFFFF',
     'https://via.placeholder.com/400x266/94fbf7/757575',
     '/images/profile/pc-dark.jpg',
-  ]
+  ],
 };
 
 export default imgAPI;

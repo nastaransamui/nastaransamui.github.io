@@ -10,30 +10,29 @@ import { withTheme } from '@material-ui/core';
 function BlogPost(props) {
   const classes = useStyles();
   const text = useText();
-  const {
-    img,
-    title,
-    desc,
-  } = props;
+  const { img, title, desc } = props;
 
   return (
     <Paper className={classes.post}>
       <figure>
-        <img src={img} alt="thumb" />
+        <img src={img} alt='thumb' />
       </figure>
       <div className={classes.text}>
-        <Typography variant="h5" className={text.subtitle2}>{title}</Typography>
-        <Typography display="block" component="p" className={text.paragraph}>{desc}</Typography>
+        <Typography variant='h5' className={text.subtitle2}>
+          {title}
+        </Typography>
+        <Typography display='block' component='p' className={text.paragraph}>
+          {desc}
+        </Typography>
       </div>
       <Button
-        href="#"
-        color="primary"
+        href='#'
+        color='primary'
         className={classes.readmore}
         classes={{
           root: classes.rootReadmore,
-          text: classes.textReadmore
-        }}
-      >
+          text: classes.textReadmore,
+        }}>
         read more
       </Button>
     </Paper>

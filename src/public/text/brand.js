@@ -13,8 +13,9 @@ const brand = {
     img: '/images/profile-logo.png',
     avatar: imgAPI.profile[1],
     cover: imgAPI.profile[0],
-    notifMsg: 'Donec sit amet nulla sed arcu pulvinar ultricies commodo id ligula.'
-  }
+    notifMsg:
+      'Donec sit amet nulla sed arcu pulvinar ultricies commodo id ligula.',
+  },
 };
 
 export default brand;

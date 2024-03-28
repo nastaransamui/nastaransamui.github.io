@@ -13,7 +13,7 @@ import useStyles from './about-style';
 import reward2 from '../../public/images/profile/reward2.png';
 import reward3 from '../../public/images/profile/node.png';
 import reward4 from '../../public/images/profile/nextjs.png';
-
+import avatar from '../../public/images/avatars/avatar-image.png';
 function About(props) {
   const theme = useTheme();
   const classes = useStyles();
@@ -111,7 +111,7 @@ function About(props) {
               </Hidden>
               <Paper className={classes.photo}>
                 <figure>
-                  <img src={brand.profile.avatar} alt='avatar' />
+                  <img src={avatar} alt='avatar' />
                 </figure>
                 <span className={classes.frame} />
               </Paper>

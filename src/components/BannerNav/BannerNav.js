@@ -8,7 +8,6 @@ import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import SideNavigation from '../SideNavigation/SideNavigation';
-import brand from '../../public/text/brand';
 import { useText } from '../theme/common';
 import Settings from '../Settings/Settings';
 import useStyles from './banner-style';
@@ -16,7 +15,7 @@ import FacebookIcon from 'react-ionicons/lib/LogoFacebook';
 import TwitterIcon from 'react-ionicons/lib/LogoTwitter';
 import InstagramIcon from 'react-ionicons/lib/LogoInstagram';
 import LinkedinIcon from 'react-ionicons/lib/LogoLinkedin';
-
+import reward4 from '../../public/images/bg.jpg';
 function BannerNav(props) {
   const theme = useTheme();
   const text = useText();
@@ -36,7 +35,7 @@ function BannerNav(props) {
             <div className={classes.banner}>
               <div className={classes.cover}>
                 <div className={classes.figure}>
-                  <img src={brand.profile.cover} alt='cover' />
+                  <img src={reward4} alt='cover' style={{ minWidth: '100%' }} />
                   <div className={classes.overlay} />
                 </div>
               </div>
