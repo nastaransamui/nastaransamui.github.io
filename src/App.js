@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import {
   ThemeProvider,
-  createMuiTheme,
+  createTheme,
   StylesProvider,
-  jssPreset
+  jssPreset,
 } from '@material-ui/core/styles';
 import { create } from 'jss';
 import rtl from 'jss-rtl';
@@ -11,26 +11,32 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import LoadingBar from 'react-top-loading-bar';
 import appTheme from './components/theme/appTheme';
 import './public/App.css';
-import 'animate.css'
-import './public/animate-extends.css'
-import './public/animate-slider.css'
+import 'animate.css';
+import './public/animate-extends.css';
+import './public/animate-slider.css';
 import './public/slick/slick.css';
-import './public/slick/slick-theme.css'
+import './public/slick/slick-theme.css';
 
-import Entrance from "./Entrance";
-
-let themeType = 'light';
-if (typeof Storage !== 'undefined') { // eslint-disable-line
-  themeType = localStorage.getItem('luxiTheme') || 'light';
+import { Route, Switch } from 'react-router-dom';
+// import Entrance from './Entrance';
+import Portfolio from './secondComponents/Portfolio';
+import Resume from './secondComponents/Resume';
+import SecondEntrance from './SecondEntrance';
+import Navbar from './secondComponents/Navbar';
+import Contact from './secondComponents/Contact';
+import Specialities from './secondComponents/Specialities';
+let themeType = 'dark';
+if (typeof Storage !== 'undefined') {
+  // eslint-disable-line
+  themeType = localStorage.getItem('luxiTheme') || 'dark';
 }
 
 function App(props) {
   const [loading, setLoading] = useState(0);
-  const [theme, setTheme] = useState({
-    ...appTheme('violet', themeType)
+  const [theme] = useState({
+    ...appTheme('geenNature', themeType),
   });
-  useEffect(() =>{
-
+  useEffect(() => {
     // Remove preloader
     const preloader = document.getElementById('preloader');
     if (preloader !== null || undefined) {
@@ -39,26 +45,21 @@ function App(props) {
 
     // Remove loading bar
     setLoading(0);
-    setTimeout(() => { setLoading(100); }, 2000);
+    setTimeout(() => {
+      setLoading(100);
+    }, 2000);
 
     // Refresh JSS in SSR
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
-  },[])
-  const toggleDarkTheme = () => {
-    const newPaletteType = theme.palette.type === 'light' ? 'dark' : 'light';
-    localStorage.setItem('luxiTheme', theme.palette.type === 'light' ? 'dark' : 'light');
-    setTheme({
-      ...appTheme('violet', newPaletteType),
-      direction: theme.direction,
-    });
-  };
-  const muiTheme = createMuiTheme(theme);
+  }, []);
+
+  const muiTheme = createTheme(theme);
   const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
   return (
-    <div >
+    <div>
       <StylesProvider jss={jss}>
         <ThemeProvider theme={muiTheme}>
           <CssBaseline />
@@ -66,10 +67,20 @@ function App(props) {
             height={3}
             color={theme.palette.primary.light}
             progress={loading}
-            className="top-loading-bar"
+            className='top-loading-bar'
           />
-          <div id="main-wrap">
-            <Entrance onToggleDark={toggleDarkTheme}/>
+          <div id='main-wrap'>
+            {/* <Entrance onToggleDark={toggleDarkTheme} /> */}
+            {/* <SecondEntrance /> */}
+
+            <Navbar />
+            <Switch>
+              <Route exact path='/' component={SecondEntrance} />
+              <Route exact path='/resume' component={Resume} />
+              <Route exact path='/portfolio' component={Portfolio} />
+              <Route exact path='/specialities' component={Specialities} />
+              <Route exact path='/contact' component={Contact} />
+            </Switch>
           </div>
         </ThemeProvider>
       </StylesProvider>

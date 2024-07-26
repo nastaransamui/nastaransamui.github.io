@@ -18,11 +18,12 @@ import Gallery6 from '../../public/Gallery/Gallery6.png';
 import Gallery7 from '../../public/Gallery/Gallery7.png';
 import Gallery8 from '../../public/Gallery/Gallery8.png';
 import Gallery9 from '../../public/Gallery/Gallery9.png';
+import Gallery10 from '../../public/Gallery/Gallery10.png';
 const portfolio = [
   {
     img: Gallery1,
     title: 'Main Page desing',
-    link: 'http://18.183.74.184:4505',
+    link: 'http://geafshow-350339072.ap-east-1.elb.amazonaws.com/',
     size: 'short',
     category: 'cat1',
   },
@@ -41,6 +42,13 @@ const portfolio = [
     category: 'cat3',
   },
   {
+    img: Gallery10,
+    title: 'Flutter Android health care app',
+    link: 'https://play.google.com/store/apps/details?id=com.healthCareApp',
+    size: 'long',
+    category: 'cat1',
+  },
+  {
     img: Gallery4,
     title: 'Dashboard desing',
     link: 'http://admin-mjcode.ddns.net/',
@@ -57,7 +65,7 @@ const portfolio = [
   {
     img: Gallery6,
     title: 'Crypto design',
-    link: 'https://charts-two.vercel.app/',
+    link: 'https://charts-two.vercel.app/login',
     size: 'short',
     category: 'cat3',
   },

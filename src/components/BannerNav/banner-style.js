@@ -1,15 +1,15 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { fade } from '@material-ui/core/styles/colorManipulator';
+import { alpha } from '@material-ui/core/styles';
 
-const bannerStyles = makeStyles(theme => ({
+const bannerStyles = makeStyles((theme) => ({
   root: {
     display: 'block',
     [theme.breakpoints.down('md')]: {
       paddingTop: theme.spacing(10),
       '& > div': {
-        padding: 0
-      }
-    }
+        padding: 0,
+      },
+    },
   },
   cover: {
     position: 'absolute',
@@ -27,18 +27,26 @@ const bannerStyles = makeStyles(theme => ({
     '& img': {
       position: 'fixed',
       [theme.breakpoints.down('xs')]: {
-        left: '-50%'
-      }
-    }
+        left: '-50%',
+      },
+    },
   },
   overlay: {
-    backgroundImage: `linear-gradient(120deg, ${theme.palette.type === 'dark' ? theme.palette.secondary.dark : theme.palette.secondary.main}, ${theme.palette.type === 'dark' ? theme.palette.primary.dark : theme.palette.primary.main})`,
-    opacity: 0.75,
+    backgroundImage: `linear-gradient(120deg, ${
+      theme.palette.type === 'dark'
+        ? theme.palette.secondary.dark
+        : theme.palette.secondary.main
+    }, ${
+      theme.palette.type === 'dark'
+        ? theme.palette.primary.dark
+        : theme.palette.primary.main
+    })`,
+    opacity: 0.55,
     position: 'absolute',
     width: '100%',
-    height: '100%',
+    height: '90%',
     top: 0,
-    left: 0
+    left: 0,
   },
   banner: {
     position: 'relative',
@@ -46,10 +54,10 @@ const bannerStyles = makeStyles(theme => ({
     color: theme.palette.common.white,
     height: 500,
     [theme.breakpoints.down('sm')]: {
-      height: 420
+      height: 420,
     },
     [theme.breakpoints.down('xs')]: {
-      height: 400
+      height: 400,
     },
     [theme.breakpoints.up('sm')]: {
       padding: theme.spacing(10),
@@ -62,11 +70,11 @@ const bannerStyles = makeStyles(theme => ({
     position: 'relative',
     maxWidth: 720,
     [theme.breakpoints.down('sm')]: {
-      textAlign: 'center'
+      textAlign: 'center',
     },
     '& h4, & h2, & h5': {
-      marginBottom: theme.spacing(3)
-    }
+      marginBottom: theme.spacing(3),
+    },
   },
   socmed: {
     marginBottom: theme.spacing(3),
@@ -76,12 +84,12 @@ const bannerStyles = makeStyles(theme => ({
       width: 36,
       height: 36,
       '& i': {
-        color: fade(theme.palette.common.white, 0.75),
-      }
+        color: alpha(theme.palette.common.white, 0.75),
+      },
     },
     '& i': {
-      fontSize: 24
-    }
+      fontSize: 24,
+    },
   },
   bar: {},
   settingIcon: {
@@ -89,8 +97,8 @@ const bannerStyles = makeStyles(theme => ({
     top: theme.spacing(10),
     right: theme.spacing(10),
     '& svg': {
-      fill: theme.palette.common.white
-    }
+      fill: theme.palette.common.white,
+    },
   },
   mobileMenu: {
     marginRight: theme.spacing(),
@@ -98,17 +106,17 @@ const bannerStyles = makeStyles(theme => ({
       backgroundColor: theme.palette.text.secondary,
       '&:after, &:before': {
         backgroundColor: theme.palette.text.secondary,
-      }
-    }
+      },
+    },
   },
   mobileNav: {
     width: 240,
     background: theme.palette.background.default,
-    padding: theme.spacing(10, 2, 4)
+    padding: theme.spacing(10, 2, 4),
   },
   menuList: {
-    textTransform: 'capitalize'
-  }
+    textTransform: 'capitalize',
+  },
 }));
 
 export default bannerStyles;

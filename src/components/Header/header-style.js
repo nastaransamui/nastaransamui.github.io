@@ -1,16 +1,16 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { fade } from '@material-ui/core/styles/colorManipulator';
+import { alpha } from '@material-ui/core/styles/colorManipulator';
 
-const headerStyles = makeStyles(theme => ({
+const headerStyles = makeStyles((theme) => ({
   '@keyframes slideRight': {
     from: {
       opacity: 0,
-      transform: 'translateX(-100px)'
+      transform: 'translateX(-100px)',
     },
     to: {
       opacity: 1,
-      transform: 'none'
-    }
+      transform: 'none',
+    },
   },
   fixed: {},
   openDrawer: {},
@@ -26,7 +26,7 @@ const headerStyles = makeStyles(theme => ({
       position: 'fixed',
       visibility: 'visible',
       opacity: 1,
-      background: fade(theme.palette.background.paper, 0.8),
+      background: alpha(theme.palette.background.paper, 0.8),
       backdropFilter: 'saturate(180%) blur(20px)',
       '& $logo': {
         '& a': {
@@ -37,15 +37,15 @@ const headerStyles = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
           backgroundColor: theme.palette.text.secondary,
           '&:after, &:before': {
-            backgroundColor: theme.palette.text.secondary
-          }
-        }
-      }
+            backgroundColor: theme.palette.text.secondary,
+          },
+        },
+      },
     },
     '&$openDrawer': {
       background: 'none',
-      backdropFilter: 'none'
-    }
+      backdropFilter: 'none',
+    },
   },
   headerContent: {
     display: 'flex',
@@ -57,8 +57,8 @@ const headerStyles = makeStyles(theme => ({
       [theme.breakpoints.down('md')]: {
         padding: theme.spacing(2, 0),
       },
-      display: 'flex'
-    }
+      display: 'flex',
+    },
   },
   logo: {
     flex: 1,
@@ -73,15 +73,15 @@ const headerStyles = makeStyles(theme => ({
       alignItems: 'center',
       fontWeight: 500,
       [theme.breakpoints.down('sm')]: {
-        color: theme.palette.common.white
-      }
+        color: theme.palette.common.white,
+      },
     },
     '& img': {
       transition: 'all 0.3s ease-out',
       width: 48,
       height: 48,
-      marginRight: theme.spacing()
-    }
+      marginRight: theme.spacing(),
+    },
   },
   invert: {},
   navLogo: {
@@ -90,29 +90,29 @@ const headerStyles = makeStyles(theme => ({
       '& $logo': {
         '& a': {
           color: theme.palette.text.primary,
-        }
+        },
       },
       '& $mobileMenu': {
         '& $bar': {
           [theme.breakpoints.down('sm')]: {
             backgroundColor: theme.palette.text.secondary,
             '&:after, &:before': {
-              backgroundColor: theme.palette.text.secondary
+              backgroundColor: theme.palette.text.secondary,
             },
-          }
-        }
+          },
+        },
       },
-    }
+    },
   },
   titleMenu: {
-    textTransform: 'capitalize'
+    textTransform: 'capitalize',
   },
   bar: {},
   menu: {},
   menuOpen: {},
   show: {},
   paperNav: {
-    background: fade(theme.palette.background.paper, 0.8),
+    background: alpha(theme.palette.background.paper, 0.8),
     backdropFilter: 'saturate(180%) blur(20px)',
     width: '100%',
     position: 'fixed',
@@ -124,15 +124,15 @@ const headerStyles = makeStyles(theme => ({
     '& $bar': {
       backgroundColor: theme.palette.text.secondary,
       '&:after, &:before': {
-        backgroundColor: theme.palette.text.secondary
+        backgroundColor: theme.palette.text.secondary,
       },
       [theme.breakpoints.down('sm')]: {
         backgroundColor: theme.palette.common.white,
         '&:after, &:before': {
-          backgroundColor: theme.palette.common.white
+          backgroundColor: theme.palette.common.white,
         },
-      }
-    }
+      },
+    },
   },
   mobileNav: {
     '& $menu': {
@@ -160,25 +160,25 @@ const headerStyles = makeStyles(theme => ({
             background: `linear-gradient(120deg, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`,
             height: '75%',
             width: 0,
-            transition: 'all 0.2s cubic-bezier(0, 0, 0.14, 0.97)'
+            transition: 'all 0.2s cubic-bezier(0, 0, 0.14, 0.97)',
           },
           '&:hover': {
             color: theme.palette.primary.main,
             background: 'none',
             '&:before': {
-              width: '110%'
+              width: '110%',
             },
-          }
-        }
+          },
+        },
       },
-    }
+    },
   },
   menuList: {
     textTransform: 'capitalize',
     '& span': {
-      fontSize: 24
-    }
-  }
+      fontSize: 24,
+    },
+  },
 }));
 
 export default headerStyles;

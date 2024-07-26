@@ -13,27 +13,32 @@ function Counter(props) {
   const text = useText();
   const [play, setPlay] = useState(false);
   const countup = (val, isPlay) => (
-    <span>
-      {isPlay ? <CountUp end={val} /> : 0}
-    </span>
+    <span>{isPlay ? <CountUp end={val} /> : 0}</span>
   );
   const handlePlay = () => {
-    setTimeout(() => { setPlay(true); }, 500);
+    setTimeout(() => {
+      setPlay(true);
+    }, 500);
   };
   return (
     <div className={classes.counterWrap}>
-      <Container maxWidth="md">
-        <Grid container justify="center" alignItems="center" className={classes.root} spacing={6}>
+      <Container maxWidth='md'>
+        <Grid
+          container
+          justifyContent='center'
+          alignItems='center'
+          className={classes.root}
+          spacing={6}>
           <Grid md={4} item>
-            <ReactWOW animation="fadeIn" offset={300} callback={handlePlay}>
+            <ReactWOW animation='fadeIn' offset={300} callback={handlePlay}>
               <div className={classes.counterItem}>
                 <div className={classes.text}>
-                  <i className="ion-ios-briefcase-outline" />
-                  <Typography variant="h4" className={text.title2}>
+                  <i className='ion-ios-briefcase-outline' />
+                  <Typography variant='h4' className={text.title2}>
                     {countup(12, play)}
                   </Typography>
                 </div>
-                <Typography variant="h6" className={text.subtitle2}>
+                <Typography variant='h6' className={text.subtitle2}>
                   Completed Project
                 </Typography>
               </div>
@@ -42,25 +47,25 @@ function Counter(props) {
           <Grid md={4} item>
             <div className={classes.counterItem}>
               <div className={classes.text}>
-                <i className="ion-ios-time-outline" />
-                <Typography variant="h4" className={text.title2}>
+                <i className='ion-ios-time-outline' />
+                <Typography variant='h4' className={text.title2}>
                   {countup(4360, play)}
                 </Typography>
               </div>
-              <Typography variant="h6" className={text.subtitle2}>
-              Working Hour
+              <Typography variant='h6' className={text.subtitle2}>
+                Working Hour
               </Typography>
             </div>
           </Grid>
           <Grid md={4} item>
             <div className={classes.counterItem}>
               <div className={classes.text}>
-                <i className="ion-ios-heart-outline" />
-                <Typography variant="h4" className={text.title2}>
+                <i className='ion-ios-heart-outline' />
+                <Typography variant='h4' className={text.title2}>
                   {countup(5, play)}
                 </Typography>
               </div>
-              <Typography variant="h6" className={text.subtitle2}>
+              <Typography variant='h6' className={text.subtitle2}>
                 Happy Clients
               </Typography>
             </div>
@@ -70,6 +75,5 @@ function Counter(props) {
     </div>
   );
 }
-
 
 export default withTheme(Counter);

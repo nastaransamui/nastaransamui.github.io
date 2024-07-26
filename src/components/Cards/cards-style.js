@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { fade } from '@material-ui/core/styles/colorManipulator';
+import { alpha } from '@material-ui/core/styles/colorManipulator';
 
-const cardsStyles = makeStyles(theme => ({
+const cardsStyles = makeStyles((theme) => ({
   iconText: {
     position: 'relative',
     textAlign: 'center',
@@ -11,7 +11,7 @@ const cardsStyles = makeStyles(theme => ({
     transition: 'all 0.3s ease-out',
     overflow: 'hidden',
     [theme.breakpoints.down(1500)]: {
-      width: 200
+      width: 200,
     },
     '&:hover': {
       background: theme.palette.secondary.main,
@@ -23,7 +23,7 @@ const cardsStyles = makeStyles(theme => ({
         top: 0,
         '&:after': {
           width: 30,
-        }
+        },
       },
       '& $desc': {
         top: 0,
@@ -32,8 +32,8 @@ const cardsStyles = makeStyles(theme => ({
       '& $icon': {
         transform: 'scale(0.5)',
         opacity: 0,
-      }
-    }
+      },
+    },
   },
   icon: {
     marginBottom: theme.spacing(2),
@@ -43,9 +43,9 @@ const cardsStyles = makeStyles(theme => ({
         fontSize: 130,
         background: `linear-gradient(120deg, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`,
         '-webkit-background-clip': 'text',
-        '-webkit-text-fill-color': 'transparent'
-      }
-    }
+        '-webkit-text-fill-color': 'transparent',
+      },
+    },
   },
   more: {
     position: 'absolute',
@@ -57,7 +57,7 @@ const cardsStyles = makeStyles(theme => ({
     transition: 'all 0.3s ease-out',
     display: 'inherit',
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   name: {
     fontWeight: theme.typography.fontWeightBold,
@@ -74,7 +74,7 @@ const cardsStyles = makeStyles(theme => ({
       margin: '0 auto',
       top: theme.spacing(1),
       borderTop: '2px solid #FFF',
-    }
+    },
   },
   desc: {
     top: 60,
@@ -104,7 +104,7 @@ const cardsStyles = makeStyles(theme => ({
         width: 160,
         height: 160,
         transform: 'rotate(-35deg)',
-        backgroundImage: `linear-gradient(120deg, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`
+        backgroundImage: `linear-gradient(120deg, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`,
       },
     },
     '& $img': {
@@ -128,21 +128,21 @@ const cardsStyles = makeStyles(theme => ({
       borderRight: 0,
       position: 'absolute',
       [theme.breakpoints.down('xs')]: {
-        display: 'none'
-      }
+        display: 'none',
+      },
     },
     '&:hover': {
       '& $img': {
-        transform: 'scale(1)'
+        transform: 'scale(1)',
       },
       '& $detail': {
         opacity: 1,
         backgroundPosition: '60% 0',
         '& h6, & a': {
           transform: 'translate(0, 0)',
-        }
-      }
-    }
+        },
+      },
+    },
   },
   detail: {
     position: 'absolute',
@@ -151,7 +151,9 @@ const cardsStyles = makeStyles(theme => ({
     height: '100%',
     bottom: 0,
     opacity: 0,
-    background: `linear-gradient(120deg, ${theme.palette.secondary.main}, ${fade(theme.palette.primary.main, 0.55)})`,
+    background: `linear-gradient(120deg, ${
+      theme.palette.secondary.main
+    }, ${alpha(theme.palette.primary.main, 0.55)})`,
     backgroundSize: '300%',
     backgroundPosition: '0% 0',
     padding: theme.spacing(3),
@@ -160,13 +162,13 @@ const cardsStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     '& > *': {
-      transition: 'all 0.4s ease-out'
+      transition: 'all 0.4s ease-out',
     },
     '& h6': {
       position: 'relative',
       transform: 'translate(0, 10px)',
       marginBottom: theme.spacing(3),
-      lineHeight: '36px'
+      lineHeight: '36px',
     },
     '& a': {
       fontSize: 18,
@@ -179,36 +181,36 @@ const cardsStyles = makeStyles(theme => ({
   short: {
     height: 240,
     [theme.breakpoints.down('md')]: {
-      height: 210
+      height: 210,
     },
     '& $img': {
-      width: '100%'
+      width: '100%',
     },
     '&:before': {
       width: 80,
-      height: 80
+      height: 80,
     },
   },
   medium: {
     height: 320,
     [theme.breakpoints.down('xs')]: {
-      height: 210
+      height: 210,
     },
     '& $img': {
-      width: '100%'
-    }
+      width: '100%',
+    },
   },
   long: {
     height: 480,
     [theme.breakpoints.down('xs')]: {
-      height: 210
+      height: 210,
     },
     '& $img': {
-      height: '100%'
+      height: '100%',
     },
     '&:before': {
       width: 190,
-      height: 260
+      height: 260,
     },
     '& $figure': {
       '&:after': {
@@ -216,15 +218,15 @@ const cardsStyles = makeStyles(theme => ({
         height: 300,
         left: -200,
         bottom: -120,
-      }
-    }
+      },
+    },
   },
   post: {
     height: 380,
     width: 256,
     position: 'relative',
     [theme.breakpoints.down('sm')]: {
-      marginBottom: 12
+      marginBottom: 12,
     },
     '& figure': {
       margin: 0,
@@ -233,9 +235,9 @@ const cardsStyles = makeStyles(theme => ({
       overflow: 'hidden',
       '& img': {
         width: '100%',
-        minHeight: '100%'
-      }
-    }
+        minHeight: '100%',
+      },
+    },
   },
   text: {
     height: 200,
@@ -248,20 +250,20 @@ const cardsStyles = makeStyles(theme => ({
       color: theme.palette.text.secondary,
       display: '-webkit-box',
       '-webkit-line-clamp': 3,
-      '-webkit-box-orient': 'vertical'
-    }
+      '-webkit-box-orient': 'vertical',
+    },
   },
   readmore: {
     '& span': {
-      fontWeight: theme.typography.fontWeightRegular
+      fontWeight: theme.typography.fontWeightRegular,
     },
     margin: theme.spacing(0, 3),
     lineHeight: '16px !important',
-    borderLeft: `3px solid ${theme.palette.primary.main}`
+    borderLeft: `3px solid ${theme.palette.primary.main}`,
   },
   textReadmore: {
     padding: '0px 8px !important',
-  }
+  },
 }));
 
 export default cardsStyles;
